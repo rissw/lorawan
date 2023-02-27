@@ -68,6 +68,7 @@ const (
 	IN865   Name = "IN865"
 	RU864   Name = "RU864"
 	ISM2400 Name = "ISM2400"
+	KZ865   Name = "KZ865"
 )
 
 // Modulation defines the modulation type.
@@ -697,6 +698,8 @@ func GetConfig(name Name, repeaterCompatible bool, dt lorawan.DwellTime) (Band, 
 		return newRU864Band(repeaterCompatible)
 	case ISM2400:
 		return newISM2400Band(repeaterCompatible)
+	case KZ865:
+		return newKZ865Band(repeaterCompatible)
 	default:
 		return nil, fmt.Errorf("lorawan/band: band %s is undefined", name)
 	}
